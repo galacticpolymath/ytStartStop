@@ -80,7 +80,7 @@ server <- function(session, input, output) {
         #extract youtube ID pattern
         base_sans_watch <-gsub("watch?v=","",input$link,fixed=TRUE)
         base<-
-            gsub("^.*(?<=\\.be\\/|\\.com\\/|embed\\/)([^\\?]*)(\\?.*)?$",
+            gsub("^.*(?<=\\.be\\/|\\.com\\/|embed\\/)([^\\?&]*)(\\?|&.*)?$",
                  "\\1",
                  base_sans_watch,
                  perl = TRUE)
